@@ -8,6 +8,7 @@ alias grep='grep --color=auto'
 alias ls='ls -h --color=auto'
 alias please='sudo `fc -n -l -1`'
 alias svim='sudoedit'
+alias c='xsel -ib'
 
 # binds
 bind ^L=clear-screen
