@@ -3,9 +3,11 @@
 #
 
 # aliases
+alias chmod='chmod 755'
+alias grep='grep --color=auto'
+alias ls='ls -h --color=auto'
 alias please='sudo `fc -n -l -1`'
 alias svim='sudoedit'
-alias ch='chmod 755'
 
 # binds
 bind ^L=clear-screen
