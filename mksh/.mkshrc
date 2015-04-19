@@ -1,0 +1,21 @@
+#
+# ~/.mkshrc
+#
+
+# aliases
+alias please='sudo `fc -n -l -1`'
+alias svim='sudoedit'
+alias ch='chmod 755'
+
+# binds
+bind ^L=clear-screen
+
+# environment variables
+export EDITOR="vim"
+export VISUAL="vim"
+
+# prompts
+PS1=' $(tput setaf 6)$(pwd | sed s:$HOME:~:) $(tput setaf 2)\$$(tput sgr0) '
+PS2=' > '
+PS3=' #? '
+PS4=' + '
