@@ -1,8 +1,7 @@
-#include "/home/quiv/.config/colours/jschx"
+#include "/home/quiv/etc/colours/jschx"
 
-URxvt*depth: 24
 !URxvt*geometry: 100x25
-URxvt.internalBorder: 5
+URxvt.internalBorder: 22
 
 ! -- scrollbar
 URxvt.scrollstyle: plain
@@ -15,22 +14,18 @@ URxvt*scrollTtyKeypress: true
 URxvt*loginShell: false
 
 ! -- font
-URxvt.font:xft:Tewi:pixelsize=11,\
-	[codeset=JISX0208]xft:Kochi Gothic:pixelsize=10
-URxvt.boldFont:xft:Tewi:pixelsize=11,\
-	[codeset=JISX0208]xft:Kochi Gothic:pixelsize=10
-URxvt.imFont:xft:Kochi Gothic:pixelsize=10:antialias=false
+!URxvt.font:xft:Tewi:pixelsize=11,\
+!	[codeset=JISX0208]xft:Kochi Gothic:pixelsize=10
+!URxvt.boldFont:xft:Tewi:pixelsize=11,\
+!	[codeset=JISX0208]xft:Kochi Gothic:pixelsize=10
+!URxvt.imFont:xft:Kochi Gothic:pixelsize=10:antialias=false
+
+URxvt*font:-*-profont-*-*-*-*-11-*-*-*-*-*-*-*
+URxvt*boldfont:-*-profont-*-*-*-*-11-*-*-*-*-*-*-*
 
 ! -- perl
-URxvt.perl-ext-common: matcher,keyboard-select,url-select,clipboard
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
 URxvt.url-select.launcher: firefox
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.clipboard.autocopy: true
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.matcher.rend.0: Uline fg16
 URxvt.matcher.button: 1
 
