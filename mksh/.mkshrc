@@ -3,7 +3,7 @@
 #
 
 # aliases
-alias chmod='chmod 755'
+alias ch='sudo chmod 755'
 alias grep='grep --color=auto'
 alias ls='ls -h --color=auto'
 alias please='sudo `fc -n -l -1`'
