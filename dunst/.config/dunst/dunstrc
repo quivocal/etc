@@ -1,0 +1,51 @@
+[global]
+#   font = ProFont 9
+    font = M+ 1m 10 
+    allow_markup = yes
+
+    format = "<b>%s</b>\n%b\n%i"
+
+    # Show how many messages are currently hidden (because of geometry)
+    indicate_hidden = yes
+
+    alignment = left
+
+    # split notifications into multiple lines if they don't fit into geometry
+    word_wrap = yes
+
+    # ignore newlines '\n' in notifications
+    ignore_newline = no
+
+    geometry = "172x12-12+12"
+
+    # Draw a line of 'separatpr_height' pixel height between two notifications.
+    # Set to 0 to disable
+    separator_height = 2
+
+    # padding between text and separator
+    padding = 8
+
+    # horizontal padding
+    horizontal_padding = 8
+
+[frame]
+    width = 1
+    color = "#7e7f89"
+
+[shortcuts]
+    close = ctrl+space
+    history = ctrl+grave
+
+[urgency_low]
+    background = "#101820"
+    foreground = "#606870"
+
+[urgency_normal]
+    background = "#305070"
+    foreground = "#d0d8e0"
+
+[urgency_critical]
+    background = "#89531e"
+    foreground = "#101820"
+
+# vim: ft=cfg
