@@ -9,6 +9,9 @@ alias ls='ls -h --color=auto'
 alias please='sudo `fc -n -l -1`'
 alias svim='sudoedit'
 alias c='xsel -ib'
+alias pacman='sudo pacman'
+alias paupg='sudo pacupg'
+alias vi='vim'
 
 # binds
 bind ^L=clear-screen
