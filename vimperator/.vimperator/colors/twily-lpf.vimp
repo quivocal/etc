@@ -1,0 +1,46 @@
+"" vimperator colorscheme twily
+
+highlight! CmdLine color: #5D4F2D; background: #EFECDD;
+highlight! CmdLine>* font-family: ProFont,monospace; font-size: 9pt;
+highlight! Normal color: #180F00; background: #EFECDD; font-family: ProFont,monospace; font-size: 9pt; padding-top: 1px;
+highlight! StatusLine color: #180F00; background: #EFECDD; font-family: ProFont,monospace; font-size: 9pt;
+
+highlight! Bell border: none; background: #EFECDD;
+highlight! Boolean color: #E7E1C7;
+highlight! CompDesc width: 500px; max-width: 500px; color: #180F00;
+highlight! CompItem>* height: 13px; min-height: 13px; padding-top: 1px; padding-bottom: 1px;
+highlight! CompItem[selected] background: #E7E1C7;
+highlight! CompTitle font-weight: normal; background: #E7E1C7;
+highlight! CompTitle>* color: #97A007; padding: 1px 0.5ex;
+highlight! ContentSeparator display: -moz-box;
+
+highlight! Disabled color: #c45553;
+highlight! Enabled color: #6D9600;
+highlight! ErrorMsg color: #180F00; font-family: ProFont, monospace;
+highlight! Filter color: #180F00; background: #E7E1C7;
+highlight! FrameIndicator background-color: #E7E1C7; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+
+highlight! HelpNote color: #c45553;
+highlight! HelpWarning color: #c45553;
+
+highlight! Hint font-family: ProFont, monospace; font-size: 9pt; color: #180F00; background-color: #EFECDD; margin-left: 1px; margin-top: 1px; padding-left: 2px; padding-right: 2px;
+highlight! HintActive color: #180F00; background-color: #E7E1C7; opacity: 1;
+highlight! HintElem color: #180F00; background-color: #E7E1C7; opacity: 1;
+highlight! HintImage opacity: 0.5;
+
+highlight! InfoMsg color: #180F00;
+highlight! Keyword color: #180F00;
+highlight! LineNr color: #E7E1C7;
+
+highlight! ModeMsg color: #EFECDD; background: #97A007; margin-left: 10px; padding-left: 2px; padding-right: 2px; font-family: ProFont, monospace; font-size: 9pt; border-radius: 1px;
+highlight! MoreMsg color: #180F00; font-family: ProFont, monospace; font-size: 9pt;
+
+highlight! PromptText color: #180F00; padding-top: 4px;
+highlight! Question color: #180F00;
+
+highlight! Title color: #97A007;
+highlight! WarningMsg color: #180F00;
+
+highlight! NonText color: #97A007;
+
+
