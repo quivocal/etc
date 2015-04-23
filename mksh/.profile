@@ -10,12 +10,15 @@ export HISTFILE="$HOME/.mksh_history"
 export LC_ALL=
 export LC_COLLATE="C"
 export GPG_TTY=$(tty)
-path=($HOME/bin)
 
+path=($HOME/bin)
 case ":$PATH:" in
 	*":$path:"*) :;; # already there
 	*) PATH="$path:$PATH";;
 esac
+
+# default dirs
+[[ $XDG_CONFIG_HOME ]] || export XDG_CONFIG_HOME="$HOME/.config"
 
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
