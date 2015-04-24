@@ -10,7 +10,7 @@ export HISTFILE="$HOME/.mksh_history"
 export LC_ALL=
 export LC_COLLATE="C"
 export GPG_TTY=$(tty)
-export PASSWORD_STORE_DIR="$HOME/usr/sync/"
+export PASSWORD_STORE_DIR="$HOME/usr/sync/pass"
 
 path=($HOME/bin)
 case ":$PATH:" in
