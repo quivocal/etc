@@ -1,0 +1,92 @@
+#!/bin/sh
+# shell functions
+
+# colorize
+color() {
+	color="$1"; shift
+	text="$@"
+	echo -n "[3${color}m${text}[00m"
+}
+
+lightcolor() {
+	color="$1"; shift
+	text="$@"
+	echo -n "[9${color}m${text}[00m"
+}
+
+# take a desktop screenshot
+scrnsht() {
+	scrot "$TMPDIR/tmp.png"
+	optipng -o7 "$TMPDIR/tmp.png"
+	MD5=$(md5sum "$TMPDIR/tmp.png" | awk '{print $1}')
+	mv "$TMPDIR/tmp.png" "$HOME/media/img/Screenshots/$MD5.png"
+}
+
+# start things in new X server
+newx() {
+	xinit $(which $1) -- :1
+}
+
+# dtach manager
+dt() {
+	sockets="$TMPDIR/dtach"
+	if [ -n "$1" ]; then
+		case "$1" in
+			list|ls) ls -1 "$sockets"/* | sed s:$sockets/:: ;;
+			rtorrent|rt) dtach -A "$sockets/rtorrent" rtorrent ;;
+			*) dtach -A "$sockets/$1" -e  "$@"
+		esac
+	else
+		echo "No application or socket specified."
+	fi
+}
+
+# extract files
+extract() {
+	if [ -f "$1" ] ; then
+		case "$1" in
+			*.tar.bz2 | *.tbz2 | *.tar.gz | *.tgz | *.tar.xz | *.txz | *.zip ) bsdtar -xf "$1" ;;
+			*.7z) 7z x "$1" ;;
+			*.bz2) bunzip2 "$1" ;;
+			*.gz) gunzip "$1" ;;
+			*.rar) unrar x "$1" ;;
+			*.tar) tar xvf "$1" ;;
+			*.xz) xz -d "$1" ;;
+			*.Z) uncompress "$1" ;;
+			*) echo "Unable to extract $1." ;;
+		esac
+	else
+		echo "Usage: extract $1"
+	fi
+}
+
+# check history
+hist() { grep -i "$1" "$SHDOTDIR"/histfile ;}
+
+# search for pids
+pids() { ps aux | grep "[${1:0:1}]${1:1}" ;}
+
+# clean package cache
+cc() { sudo paccache -rvk2 && sudo paccache -ruvk0 ;}
+
+# paste to sprunge
+sprung() { curl -F "sprunge=<-" http://sprunge.us <"$1" ;}
+
+# check pacman's logs
+paclog() { tail -n"$1" /var/log/pacman.log ;}
+
+# paste from clipboard
+px() { printf '%s\n' $(xsel -b) ;}
+
+# follow copied/moved files
+cpf() { cp "$@" && goto "$_"; }
+mvf() { mv "$@" && goto "$_"; }
+goto() { [ -d "$1" ] && cd "$1" || cd "$(dirname "$1")" ;}
+
+# External IP
+wmip() { printf "External IP: %s\n" $(curl -s  http://ifconfig.me/) ;}
+
+# make patch
+mkpatch() {
+	diff -Naur $1 $2 > $3
+}

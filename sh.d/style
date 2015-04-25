@@ -1,0 +1,18 @@
+#!/bin/sh
+
+prompt () {
+	_ERR=$?
+	_UID=$(id -u)
+	_JOB=$(jobs | wc -l)
+
+	[ $_UID -eq 0 ] && echo -n '[31m─' || echo -n '[30m─'
+	[ $_JOB -ne 0 ] && echo -n '[32m─' || echo -n '[30m─'
+	[ $_ERR -ne 0 ] && echo -n '[33m─' || echo -n '[30m─'
+	
+	echo -n '[0m'
+}
+
+PS1='$(prompt) '
+PS2='> '
+PS3='#? '
+PS4='+ '

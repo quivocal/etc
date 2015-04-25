@@ -1,27 +1,23 @@
-#
-# ~/.mkshrc
-#
+#!/bin/mksh
 
-# aliases
-alias ch='sudo chmod 755'
-alias grep='grep --color=auto'
-alias ls='ls -h --color=auto'
-alias please='sudo `fc -n -l -1`'
-alias svim='sudoedit'
-alias c='xsel -ib'
-alias pacman='sudo pacman'
-alias paupg='sudo pacupg'
-alias vi='vim'
+# quit if non-interactive shell
+[[ $- != *i* ]] && return
 
 # binds
 bind ^L=clear-screen
 
-# environment variables
-export EDITOR="vim"
-export VISUAL="vim"
+# history
+export HISTFILE="$SHDIR/histfile"
 
-# prompts
-PS1=' $(tput setaf 6)$(pwd | sed s:$HOME:~:) $(tput setaf 2)\$$(tput sgr0) '
-PS2=' > '
-PS3=' #? '
-PS4=' + '
+# aliases
+[[ -e "$SHDIR/alias" ]] && source $SHDIR/alias
+
+# functions
+[[ -e "$SHDIR/functions" ]] && source $SHDIR/functions
+
+# appearance
+[[ -e "$SHDIR/style" ]] && source $SHDIR/style
+
+# settings
+set -o posix 	# try to follow POSIX
+set -o bgnice 	# prioritize foreground
