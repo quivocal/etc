@@ -19,5 +19,4 @@ export HISTFILE="$SHDIR/histfile"
 [[ -e "$SHDIR/style" ]] && source $SHDIR/style
 
 # settings
-set -o posix 	# try to follow POSIX
 set -o bgnice 	# prioritize foreground
