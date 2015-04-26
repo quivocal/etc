@@ -16,25 +16,14 @@
 	nmap <C-k> <C-w>k
 	nmap <C-l> <C-w>l
 	syntax enable
-	"let g:solarized_termcolors=256
-	"let g:solarized_termtrans=1
 	colorscheme default
 	set background=dark
-	"colors darkspectrum
 "	set nowrap
 "	set mouse=a 				" use mouse anywhere
 	set autoread 				" Set to auto read when a file is changed from the outside
 
 	filetype plugin indent on
-"	autocmd Filetype php setlocal sts=4 sw=4 expandtab
-"	autocmd Filetype javascript setlocal sts=4 sw=4 expandtab
-"	autocmd Filetype python setlocal sts=4 sw=4 expandtab
-"	autocmd Filetype c setlocal sts=4 sw=4 expandtab
-"	autocmd Filetype ruby setlocal sts=2 sw=2 expandtab
-"	autocmd Filetype vcl setlocal sts=4 sw=4 expandtab
-"	autocmd Filetype json setlocal sts=4 sw=4 expandtab
-"	autocmd Filetype erb setlocal sts=4 sw=4 expandtab
-"	autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+	
 	au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 
 	set undofile
@@ -52,25 +41,25 @@
 " COLORS {
 	" syntax highlighting groups
 	hi Comment      ctermfg=7
-"	hi Constant     ctermfg=15 
-"	hi Identifier   ctermfg=4
-"	hi Statement    ctermfg=8
-"	hi PreProc      ctermfg=6
-"	hi Type         ctermfg=1
-"	hi Special      ctermfg=3
-"	hi Underlined   ctermfg=7
-"	hi Ignore       ctermfg=9
-"	hi Error        ctermfg=11
-"	hi Todo         ctermfg=1
-"	hi Normal ctermfg=none ctermbg=none
-"	hi NonText ctermfg=0 ctermbg=none
-"	hi Directory	ctermfg=12
-
-      hi VertSplit	ctermfg=0 ctermbg=none
-      hi StatusLine	ctermfg=0 ctermbg=none
-      hi StatusLineNC	ctermfg=0 ctermbg=none
-
-      hi Folded ctermbg=0 ctermfg=8
+	hi Constant     ctermfg=15 
+	hi Identifier   ctermfg=4
+	hi Statement    ctermfg=8
+	hi PreProc      ctermfg=6
+	hi Type         ctermfg=1
+	hi Special      ctermfg=3
+	hi Underlined   ctermfg=7
+	hi Ignore       ctermfg=9
+	hi Error        ctermfg=11
+	hi Todo         ctermfg=1
+	hi Normal ctermfg=none ctermbg=none
+	hi NonText ctermfg=0 ctermbg=none
+	hi Directory	ctermfg=12
+	
+	hi VertSplit	ctermfg=0 ctermbg=none
+	hi StatusLine	ctermfg=0 ctermbg=none
+	hi StatusLineNC	ctermfg=0 ctermbg=none
+	
+	hi Folded ctermbg=0 ctermfg=8
 
 	hi Pmenu ctermfg=7 ctermbg=0
 	hi PmenuSel ctermfg=0 ctermbg=15
@@ -78,7 +67,7 @@
 	hi CursorLine ctermfg=none ctermbg=none cterm=none
 	hi CursorLineNr ctermfg=none ctermbg=0 
 	hi CursorColumn ctermfg=none ctermbg=0
-"
+
 	" Syntax checker colors
 	highlight SignColumn ctermbg=none
 	hi SyntasticErrorSign ctermfg=1 ctermbg=none
@@ -94,41 +83,20 @@
 
 "}
 
-" PLUGINS
+" PLUGINS {
 	call pathogen#infect()
 	call pathogen#helptags()
+
+" EASYALIGN
+        " Start interactive EasyAlin in visual mode (e.g. vip<Enter>)
+        vmap <Enter> <Plug>(EasyAlign)
+	" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+	nmap ga <Plug>(EasyAlign)
 
 " NERDTREE
 	let NERDChristmasTree = 1
 	let NERDTreeHighlightCursorline = 1
 
-" VDEBUG
-	let g:vdebug_features = {'max_depth':2048}
-	let g:vdebug_options= {
-				\	"continuous_mode": 1,
-				\	"debug_window_level": 2,
-				\	"debug_file_level": 2,
-				\	"debug_file":"/home/quiv/vdebug.log"
-				\}
-
-" AIRLINE 
-	let g:airline_symbols = {}
-	let g:airline_left_sep = '⮀'
-	let g:airline_left_alt_sep = '⮁'
-	let g:airline_right_sep = '⮂'
-	let g:airline_right_alt_sep = '⮃'
-	let g:airline_symbols.branch = '⭠'
-	let g:airline_symbols.readonly = '⭤'
-	let g:airline_symbols.linenr = '⭡'
- 
-
-	" Fancy powerline symbols, needs a patched/edited font
-	let g:Powerline_symbols = 'fancy'
-	"
-	" " Use ∓ to indicate branches
-	"let g:Powerline_symbols_override = {
-	"     \ 'BRANCH': [0x2213],
-					 \ }
 " LIGHTLINE
 let g:lightline = {
       \ 'colorscheme': 'wombat',
@@ -138,6 +106,7 @@ let g:lightline = {
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
+"}
 
 " WORD PROCESSING {
 	set formatoptions=1
