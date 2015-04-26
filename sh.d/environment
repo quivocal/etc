@@ -10,6 +10,7 @@ export SYSTEMD_PAGER="less -j4aR"
 export GPG_TTY=$(tty)
 export GPGKEY="D40CEBED"
 export PASSWORD_STORE_DIR="$HOME/usr/sync/pass"
+export ASPROOT="$HOME/usr/pkgs/"
 
 # disabled until I figure out how to resolve conflict with git diff colors
 #export LESS="FX"
