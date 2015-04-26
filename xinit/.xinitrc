@@ -4,6 +4,7 @@ userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
+comptoncfg=$HOME/etc/compton/compton.conf
 
 # merge in defaults and keymaps
 
@@ -58,7 +59,7 @@ echo BYE | gpg-connect-agent
 urxvtd -q -o -f
 
 # compositor
-compton -r 10 -o 0.65 -l -15 -t -15 -c -C -b --shadow-exclude 'class_g = "dmenu"'
+compton --config $comptoncfg -b
 
 # touchpad typing disable
 syndaemon -k -i 0.5 -d
