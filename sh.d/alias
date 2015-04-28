@@ -28,3 +28,5 @@ alias ch='sudo chmod 755'
 alias tp='trash-put'
 alias tl='trash-list'
 
+# dtach
+alias cmus='dtach -A /tmp/cmus cmus'
