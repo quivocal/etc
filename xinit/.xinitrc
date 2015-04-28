@@ -7,7 +7,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 comptoncfg=$HOME/etc/compton/compton.conf
 
 # merge in defaults and keymaps
-
 if [ -f "$sysresources" ]; then
   xrdb -merge "$sysresources"
 fi
@@ -25,7 +24,6 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # start some nice programs
-
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?* ; do
   [ -x "$f" ] && . "$f"
@@ -58,7 +56,7 @@ echo BYE | gpg-connect-agent
 # urxvtd
 urxvtd -q -o -f
 
-# compositor
+# remove tearing
 compton --config $comptoncfg -b
 
 # touchpad typing disable
