@@ -20,7 +20,8 @@ URxvt*loginShell: false
 !	[codeset=JISX0208]xft:Kochi Gothic:pixelsize=10
 !URxvt.imFont:xft:Kochi Gothic:pixelsize=10:antialias=false
 
-URxvt*font:-*-profont-*-*-*-*-11-*-*-*-*-*-*-*
+!URxvt*font:-*-profont-*-*-*-*-11-*-*-*-*-*-*-*
+URxvt*font:-*-creep-*-*-*--16-*-*-*-*-*-*-*
 URxvt*boldFont:
 !URxvt.font:xft:m +1m:style=regular:pixelsize=10.5
 
